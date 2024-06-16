@@ -8,22 +8,22 @@ import ImageCarousel from "../components/ImageCarousel.svelte";
 ---
 
 <Layout title="Bal Uday">
-  <main class="space-y-20 md:m-0 -mr-20">
-    <section id="hero" class="md:py-16">
+  <main class="">
+    <section id="hero" class="md:py-16 py-10 md:px-0">
       <div class="flex flex-col md:flex-row items-start justify-between">
-        <div class="basis-2/3 px-20 py-32">
+        <div class="basis-full md:basis-2/3 px-4 md:px-20 py-10 md:py-32">
           <div class="leading-10">
             <span class="text-3xl font-semibold">Bal Uday</span>
             <br />
             <span
-              class="text-6xl font-extrabold text-primary-yellow leading-[60px]"
+              class="text-5xl md:text-6xl font-extrabold text-primary-yellow leading-[50px] md:leading-[60px]"
             >
               <span
                 >Brighter <span class="text-primary-green">Future,</span>
               </span>
               <p>Empowered Children!</p>
             </span>
-            <span class="text-lg font-semibold py-4"
+            <span class="text-lg font-semibold py-4 block"
               >Nurturing children and communities through education and support.</span
             >
             <div>
@@ -34,24 +34,24 @@ import ImageCarousel from "../components/ImageCarousel.svelte";
             </div>
           </div>
         </div>
-        <div class="">
-          <Image src={HeroImage} alt="Bal Uday"/>
+        <div class="w-full md:w-auto">
+          <Image src={HeroImage} alt="Bal Uday" class="max-w-full h-auto"/>
         </div>
       </div>
     </section>
-    <section id="about-us" class="space-y-10 px-20">
+    <section id="about-us" class="space-y-10 px-4 md:px-20 py-10 md:py-0">
       <div class="text-center">
-        <span class="text-6xl font-extrabold text-stone-800"
+        <span class="text-5xl md:text-6xl font-extrabold text-stone-800"
           >About <span class="text-primary-yellow">Us</span></span
         >
       </div>
       <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-        <div class="basis-1/2">
+        <div class="basis-full md:basis-1/2">
           <div class="md:p-8">
-            <Image src={AboutUsImage} alt={"standing boy"} class="" />
+            <Image src={AboutUsImage} alt={"standing boy"} class="max-w-full h-auto"/>
           </div>
         </div>
-        <div class="basis-1/2 text-lg md:text-2xl [font-size:22px] leading-9 md:p-8">
+        <div class="basis-full md:basis-1/2 text-base md:text-lg lg:text-2xl leading-9 md:p-8">
           Bal Uday is a non-profit trust dedicated to spreading awareness about
           child rights among children, parents, teachers, and nodal officers.
           Our mission is to educate and empower communities to ensure the safety
@@ -70,31 +70,31 @@ import ImageCarousel from "../components/ImageCarousel.svelte";
         </div>
       </div>
     </section>
-    <section id="workshops">
+    <section id="workshops" class="py-10">
       <div class="text-center">
-        <span class="text-6xl font-extrabold text-stone-800"
+        <span class="text-5xl md:text-6xl font-extrabold text-stone-800"
           ><span class="text-[#C69C6D]">Work</span>shops</span
         >
       </div>
-      <div class="p-20">
+      <div class="p-4 md:p-20">
         <div class="mx-auto">
           <ImageCarousel client:load />
         </div>
       </div>
     </section>
-    <section id="contact-us" class="px-10 md:px-20">
-      <div class="flex md:flex-row flex-col justify-between items-center">
-        <div class="basis-1/2 mx-auto space-y-4 p-10">
-          <span class="text-6xl font-extrabold text-primary-green">Contact Us</span>
-          <div class="max-w-lg">
+    <section id="contact-us" class="px-4 md:px-20 py-10 ">
+      <div class="container mx-auto flex flex-col md:flex-row justify-between items-start gap-10">
+        <div class="w-full md:w-1/2 space-y-4 p-4 md:p-10 text-center md:text-left">
+          <span class="text-5xl md:text-6xl font-extrabold text-primary-green">Contact Us</span>
+          <div class="max-w-lg mx-auto md:mx-0">
             Please feel free to reach out to us in case you have any queries or
             complaints. Once we have received any complaints or queries, we will
             reach out to you.
           </div>
         </div>
-        <div class="md:basis-1/2">
+        <div class="w-full md:w-1/2">
           <div class="flex items-center justify-center">
-            <form class="flex flex-col gap-2 md:w-[40%]">
+            <form class="flex flex-col gap-4 w-full max-w-md">
               <input
                 type="text"
                 name="firstName"
@@ -115,14 +115,16 @@ import ImageCarousel from "../components/ImageCarousel.svelte";
               />
               <textarea
                 name="message"
-                rows="3"
+                rows="4"
                 placeholder="Message/Complaint"
-                class="form-input"></textarea>
+                class="form-input"
+              ></textarea>
               <button
                 type="submit"
-                class="rounded-lg text-white bg-primary-green px-4 py-2 text-xs font-semibold my-4"
-                >Submit</button
+                class="rounded-lg text-white bg-primary-green px-6 py-3 text-sm font-semibold"
               >
+                Submit
+              </button>
             </form>
           </div>
         </div>
