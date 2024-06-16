@@ -1,33 +1,31 @@
-<footer class="px-24 bg-primary-green text-white">
-  <div class="flex flex-col md:flex-row items-center justify-evenly md:justify-center gap-5">
-    <div class="py-10 text-lg mx-auto">
+<footer class="px-4 md:px-24 bg-primary-green text-white">
+  <div class="flex flex-col md:flex-row items-center justify-between py-10">
+    <div class="text-center md:text-left text-lg">
       <span class="font-semibold">Bal Uday</span>
-      <br />
-      <br />
+      <br /><br />
       <div>P-2B, 4th Floor, Jangpura</div>
-      <div>Extension,New Delhi-110014</div>
+      <div>Extension, New Delhi-110014</div>
       <br />
       <div>+91 1147072608, 7303732100</div>
     </div>
-    <div class="mx-auto">
-      <h3 class="text-2xl font-semibold mb-4">Social Media</h3>
-      <ul>
-        <li class="mb-4"><a href="">
-            <i class="fa-brands fa-instagram"></i>
-            Instagram</a></li>
-        <li class="mb-4"><a href="">Facebook</a></li>
-        <li class="mb-4"><a href="">Linkedin</a></li>
-        <li class="mb-4"><a href="">X (formerly Twitter)</a></li>
-      </ul>
-    </div>
-    <div class="mx-auto">
-      <h3 class="text-2xl font-semibold mb-4">Quick Links</h3>
-      <ul>
-        <li class="mb-4"><a href="{{ route('home') }}">Home</a></li>
-        <li class="mb-4"><a href="{{ route('about') }}">About Us</a></li>
-        <li class="mb-4"><a href="{{ route('services') }}">Services</a></li>
-        <li class="mb-4"><a href="{{ route('contact') }}">Contact Us</a></li>
-      </ul>
+    <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-4"> <div class="text-center md:text-left mx-auto">
+        <h3 class="text-2xl font-semibold mb-4">Social Media</h3>
+        <ul>
+          <li class="mb-4"><a href=""><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+          <li class="mb-4"><a href="">Facebook</a></li>
+          <li class="mb-4"><a href="">LinkedIn</a></li>
+          <li class="mb-4"><a href="">X (formerly Twitter)</a></li>
+        </ul>
+      </div>
+      <div class="text-center md:text-left mx-auto">
+        <h3 class="text-2xl font-semibold mb-4">Quick Links</h3>
+        <ul>
+          <li class="mb-4"><a href="{{ route('home') }}">Home</a></li>
+          <li class="mb-4"><a href="{{ route('about') }}">About Us</a></li>
+          <li class="mb-4"><a href="{{ route('services') }}">Services</a></li>
+          <li class="mb-4"><a href="{{ route('contact') }}">Contact Us</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </footer>
