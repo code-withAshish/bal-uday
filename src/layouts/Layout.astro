@@ -19,7 +19,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="">
+  <body>
     <NavBar />
     <slot />
     <Footer />
@@ -29,7 +29,6 @@ const { title } = Astro.props;
   @font-face {
     font-family: "Raleway";
     src: url("/fonts/Raleway.ttf") format("truetype");
-    font-optical-sizing: auto;
   }
 
   html {
