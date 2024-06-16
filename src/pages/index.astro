@@ -1,0 +1,138 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import HeroImage from "../assets/HeroImage.png";
+import AboutUsImage from "../assets/AboutUs.png";
+import "@splidejs/splide/css/core";
+import ImageCarousel from "../components/ImageCarousel.svelte";
+---
+
+<Layout title="Bal Uday">
+  <main class="space-y-20 mx-auto">
+    <section id="hero" class="md:py-16">
+      <div class="flex flex-col md:flex-row items-start justify-between">
+        <div class="basis-2/3 px-20 py-32">
+          <div class="leading-10">
+            <span class="text-3xl font-semibold">Bal Uday</span>
+            <br />
+            <span
+              class="text-6xl font-extrabold text-primary-yellow leading-[60px]"
+            >
+              <span
+                >Brighter <span class="text-primary-green">Future,</span>
+              </span>
+              <p>Empowered Children!</p>
+            </span>
+            <span class="text-lg font-semibold py-4"
+              >Nurturing children and communities through education and support.</span
+            >
+            <div>
+              <button
+                class="bg-primary-green text-white text-lg font-semibold rounded-md p-3 px-6 my-3"
+                >Learn More</button
+              >
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <Image src={HeroImage} alt="Bal Uday"/>
+        </div>
+      </div>
+    </section>
+    <section id="about-us" class="space-y-10 md:px-20">
+      <div class="text-center">
+        <span class="text-6xl font-extrabold text-stone-800"
+          >About <span class="text-primary-yellow">Us</span></span
+        >
+      </div>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="basis-1/2">
+          <div class="md:p-8">
+            <Image src={AboutUsImage} alt={"standing boy"} class="" />
+          </div>
+        </div>
+        <div class="basis-1/2 text-lg md:text-2xl [font-size:22px] leading-9 md:p-8">
+          Bal Uday is a non-profit trust dedicated to spreading awareness about
+          child rights among children, parents, teachers, and nodal officers.
+          Our mission is to educate and empower communities to ensure the safety
+          and well-being of every child.
+          <br />
+          <br />
+          Our two-tier program targets both adults (teachers, parents, and nodal
+          officers) and children, providing education about legal rights and protections
+          under acts like the POSCO Act and the Juvenile Justice Act. We aim to prevent
+          exploitation and provide avenues for redressal through proper legal channels.
+          <br />
+          <button
+            class="bg-primary-yellow text-white text-lg font-semibold rounded-md p-3 px-6 my-5"
+            >Know More</button
+          >
+        </div>
+      </div>
+    </section>
+    <section id="workshops">
+      <div class="text-center">
+        <span class="text-6xl font-extrabold text-stone-800"
+          ><span class="text-[#C69C6D]">Work</span>shops</span
+        >
+      </div>
+      <div class="md:p-20">
+        <div class="mx-auto">
+          <ImageCarousel client:load />
+        </div>
+      </div>
+    </section>
+    <section id="contact-us" class="md:px-20">
+      <div class="flex md:flex-row flex-col justify-between items-center">
+        <div class="basis-1/2 mx-auto space-y-4 p-10">
+          <span class="text-6xl font-extrabold text-primary-green">Contact Us</span>
+          <div class="max-w-lg">
+            Please feel free to reach out to us in case you have any queries or
+            complaints. Once we have received any complaints or queries, we will
+            reach out to you.
+          </div>
+        </div>
+        <div class="md:basis-1/2">
+          <div class="flex items-center justify-center">
+            <form class="flex flex-col gap-2 md:w-[40%]">
+              <input
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                class="form-input"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                class="form-input"
+              />
+              <input
+                type="tel"
+                name="tele"
+                placeholder="Phone Number"
+                class="form-input"
+              />
+              <textarea
+                name="message"
+                rows="3"
+                placeholder="Message/Complaint"
+                class="form-input"></textarea>
+              <button
+                type="submit"
+                class="rounded-lg text-white bg-primary-green px-4 py-2 text-xs font-semibold my-4"
+                >Submit</button
+              >
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .form-input {
+    @apply bg-[#EEF9EF] p-3 rounded-lg text-xs;
+  }
+</style>

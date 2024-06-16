@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import SiteLogo from "../assets/logo.png";
+
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: "/", text: "Home" },
+  { href: "/about", text: "About Us" },
+  { href: "/blog", text: "Workshops" },
+  { href: "/contact", text: "Contact Us" },
+];
+---
+
+<nav class="flex flex-row items-center justify-between mx-10">
+  <Image src={SiteLogo} alt="Logo" class={"w-28 h-28"} />
+  <ul class="flex flex-row items-center justify-center gap-10 font-bold">
+    {
+      navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class={`text-gray-900 hover:text-gray-700 ${
+              currentPath === item.href
+                ? "underline decoration-4 underline-offset-8 decoration-primary-green"
+                : ""
+            }`}
+          >
+            {item.text}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
