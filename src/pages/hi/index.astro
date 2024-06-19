@@ -1,0 +1,162 @@
+---
+import { Image } from "astro:assets";
+import HeroImage from "../../assets/HeroImage.png";
+import AboutUsImage from "../../assets/AboutUs.png";
+import WorkshopsImageCarousel from "../../components/WorkshopsImageCarousel.svelte";
+import HindiLayout from "../../layouts/HindiLayout.astro";
+---
+
+<HindiLayout title="बाल उदय">
+  <main class="space-y-5">
+    <section id="hero" class="md:py-16 py-10 md:px-0">
+      <div class="flex flex-col md:flex-row items-start justify-between">
+        <div class="basis-full md:basis-2/3 px-4 md:px-20 py-10 md:py-32">
+          <div class="leading-10">
+            <span class="text-3xl font-semibold text-[#333333]">बाल उदय</span>
+            <br />
+            <span
+              class="text-5xl md:text-6xl font-[700] text-primary-yellow leading-[50px] md:leading-[60px]"
+            >
+              <span
+                >उज्जवल <span class="text-primary-green">भविष्य,</span>
+              </span>
+              <p>सशक्त बच्चे!</p>
+            </span>
+            <span class="text-lg font-semibold py-4 block"
+              >शिक्षा और समर्थन के माध्यम से बच्चों और समुदायों का पोषण।</span
+            >
+            <div>
+              <!-- <button
+                class="bg-primary-green text-white text-lg font-semibold rounded-md p-3 px-6 my-3"
+              > -->
+              <a
+                href="/hi/#about-us"
+                class="bg-primary-green text-white text-lg font-semibold rounded-md p-4 px-6 my-3"
+                >अधिक जानकारी</a
+              >
+              <!-- </button> -->
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-auto">
+          <Image src={HeroImage} alt="Bal Uday" class="max-w-full h-auto" />
+        </div>
+      </div>
+    </section>
+    <section id="about-us" class="space-y-5 px-4 md:px-20 md:py-0">
+      <div class="text-center">
+        <span class="text-5xl md:text-6xl font-[700] text-[#333333]"
+          >हमारे <span class="text-primary-yellow">बारे में</span></span
+        >
+      </div>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="basis-full md:basis-1/2">
+          <div class="md:p-8">
+            <Image
+              src={AboutUsImage}
+              alt={"standing boy"}
+              class="max-w-full h-auto"
+            />
+          </div>
+        </div>
+        <div
+          class="basis-full md:basis-1/2 text-base md:text-lg lg:text-2xl leading-9 md:p-8"
+        >
+          बाल उदय एक गैर-लाभकारी ट्रस्ट है जो बच्चों, माता-पिता, शिक्षकों और
+          नोडल अधिकारियों के बीच बाल अधिकारों के बारे में जागरूकता फैलाने के लिए
+          समर्पित है। हमारा मिशन समुदायों को शिक्षित और सशक्त बनाना है ताकि हर
+          बच्चे की सुरक्षा और भलाई सुनिश्चित हो सके।
+          <br />
+          <br />
+          हमारा द्विस्तरीय कार्यक्रम वयस्कों (शिक्षकों, माता-पिता और नोडल अधिकारियों)
+          और बच्चों दोनों को लक्षित करता है, जिसमें कानूनी अधिकारों और पॉक्सो अधिनियम
+          और किशोर न्याय अधिनियम जैसे कानूनों के तहत सुरक्षा के बारे में शिक्षा प्रदान
+          की जाती है। हमारा उद्देश्य शोषण को रोकना और उचित कानूनी चैनलों के माध्यम
+          से निवारण के रास्ते प्रदान करना है।
+          <br />
+
+          <a href="/hi/about">
+            <button
+              class="bg-primary-yellow text-white text-lg font-semibold rounded-md p-3 px-6 my-5"
+              >अधिक जानकारी</button
+            ></a
+          >
+        </div>
+      </div>
+    </section>
+  </main>
+  <section id="workshops" class="py-10 space-y-5 px-4 md:px-20">
+    <div class="text-center">
+      <span class="text-5xl md:text-6xl font-[700] text-[#333333]"
+        ><span class="text-[#C69C6D]">वर्क</span>शॉप्स</span
+      >
+    </div>
+    <div class="p-4 md:p-20">
+      <div class="mx-auto">
+        <WorkshopsImageCarousel client:only />
+      </div>
+    </div>
+  </section>
+  <section id="contact-us" class="px-4 md:px-20 pb-10">
+    <div
+      class="container mx-auto flex flex-col md:flex-row justify-between items-start gap-10"
+    >
+      <div
+        class="w-full md:w-1/2 space-y-4 p-4 md:p-10 text-center md:text-left"
+      >
+        <span class="text-5xl md:text-6xl font-[700] text-[#333333]"
+          >हमसे संपर्क करें <span class="text-primary-green">।</span></span
+        >
+        <div class="max-w-lg mx-auto md:mx-0">
+          कृपया हमसे संपर्क करें अगर आपके पास कोई सवाल या शिकायत हो। हमें किसी
+          भी शिकायत या सवाल को प्राप्त होने पर हम आपसे संपर्क करेंगे।
+        </div>
+      </div>
+      <div class="w-full md:w-1/2">
+        <div class="flex items-center justify-center">
+          <form class="flex flex-col gap-4 w-full max-w-md">
+            <input
+              type="text"
+              name="firstName"
+              placeholder="पूरा नाम*"
+              class="form-input"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="ईमेल*"
+              class="form-input"
+              required
+            />
+            <input
+              type="tel"
+              name="tele"
+              placeholder="फोन नंबर*"
+              class="form-input"
+              required
+            />
+            <textarea
+              name="message"
+              rows="4"
+              placeholder="संदेश / शिकायत*"
+              required
+              class="form-input"></textarea>
+            <button
+              type="submit"
+              class="rounded-lg text-white bg-primary-green px-6 py-3 text-sm font-semibold"
+            >
+              सबमिट
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</HindiLayout>
+
+<style>
+  .form-input {
+    @apply bg-[#EEF9EF] p-3 rounded-lg text-xs;
+  }
+</style>

@@ -1,0 +1,46 @@
+---
+import PartnersImageCarousel from "../components/PartnersImageCarousel.svelte";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About us">
+  <section id="about-us" class="space-y-10 px-4 md:px-20 py-10 md:py-0">
+    <div class="text-center">
+      <span class="text-5xl md:text-6xl font-extrabold text-[#333333]"
+        >About <span class="text-primary-yellow">Us</span></span
+      >
+    </div>
+    <p class="text-wrap max-w-6xl mx-auto">
+      At Bal Uday, we are committed to bridging the critical gap in awareness
+      regarding child rights among children, parents, teachers, and nodal
+      officers. The absence of such programs has left children vulnerable to
+      exploitation by unlawful elements in society. Our initiative empowers all
+      stakeholders through a comprehensive educational approach. By targeting
+      teachers, parents, and nodal officers as Group 1, and children as Group 2,
+      we aim to provide thorough education on legal rights, responsibilities,
+      and protective measures. Our mission is to ensure everyone is
+      well-informed about the dos and don'ts of the law, creating a safer
+      community for our children.
+      <br />
+      <br />
+      Our two-tier program addresses those affected by unlawful activities and works
+      to prevent potential exploitation. By providing education and creating a redressal
+      mechanism, we connect affected individuals with authorities and organizations
+      for counseling and problem-solving, including initiating necessary legal actions.
+      This approach mitigates immediate risks and ensures children have access to
+      proper legal remedies, fostering a safer environment where they can thrive
+      without fear of victimization or becoming offenders. Through Bal Uday, we strive
+      to build a future where every child knows their rights and has the tools to
+      protect themselves.
+    </p>
+
+    <div class="text-center">
+      <span class="text-5xl md:text-6xl font-extrabold text-[#333333]"
+        >Our Partners</span
+      >
+    </div>
+    <div class="pb-10">
+      <PartnersImageCarousel client:load />
+    </div>
+  </section>
+</Layout>

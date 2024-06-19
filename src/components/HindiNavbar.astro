@@ -4,10 +4,10 @@ import SiteLogo from "../assets/logo.png";
 import LanguageSwitcher from "./LanguageSwitcher.svelte";
 
 const navItems = [
-  { href: "/#hero", text: "Home" },
-  { href: "/#about-us", text: "About Us" },
-  { href: "/#workshops", text: "Workshops" },
-  { href: "/#contact-us", text: "Contact Us" },
+  { href: "/hi/#hero", text: "होम" },
+  { href: "/hi/#about-us", text: "हमारे बारे में" },
+  { href: "/hi/#workshops", text: "वर्कशॉप्स" },
+  { href: "/hi/#contact-us", text: "संपर्क करे" },
 ];
 ---
 
@@ -50,9 +50,7 @@ const navItems = [
               <a
                 data-nav={item.text}
                 href={item.href}
-                class={
-                  "block md:inline text-gray-900 hover:text-gray-700 hover:underline hover:underline-offset-4 hover:decoration-primary-green hover:decoration-4"
-                }
+                class={"block md:inline text-gray-900 hover:text-gray-700"}
               >
                 {item.text}
               </a>

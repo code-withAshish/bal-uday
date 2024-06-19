@@ -1,7 +1,6 @@
 ---
-import Footer from "../components/Footer.astro";
-import NavBar from "../components/NavBar.astro";
-
+import HindiFooter from "../components/HindiFooter.astro";
+import HindiNavbar from "../components/HindiNavbar.astro";
 interface Props {
   title: string;
 }
@@ -10,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="w-full">
+<html lang="hi" class="w-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -24,15 +23,15 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="min-w-screen">
-    <NavBar />
+    <HindiNavbar />
     <slot />
-    <Footer />
+    <HindiFooter />
   </body>
 </html>
 <style is:global>
   @font-face {
-    font-family: "Raleway";
-    src: url("/fonts/Raleway.ttf") format("truetype");
+    font-family: "TiroDevanagariHindi";
+    src: url("/fonts/TiroDevanagariHindi.ttf") format("truetype");
     font-optical-sizing: auto;
   }
   * {
@@ -40,7 +39,7 @@ const { title } = Astro.props;
     padding: 0;
   }
   html {
-    font-family: "Raleway", sans-serif;
+    font-family: "TiroDevanagariHindi", sans-serif;
     scroll-behavior: smooth;
   }
 </style>
