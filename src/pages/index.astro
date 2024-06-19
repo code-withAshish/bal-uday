@@ -106,7 +106,10 @@ import WorkshopsImageCarousel from "../components/WorkshopsImageCarousel.svelte"
         </div>
         <div class="w-full md:w-1/2">
           <div class="flex items-center justify-center">
-            <form class="flex flex-col gap-4 w-full max-w-md">
+            <form
+              class="flex flex-col gap-4 w-full max-w-md"
+              action="/api/sendEmail"
+            >
               <input
                 type="text"
                 name="firstName"
