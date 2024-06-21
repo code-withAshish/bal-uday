@@ -28,7 +28,8 @@ import WorkshopsImageCarousel from "../components/WorkshopsImageCarousel.svelte"
             <div>
               <button
                 class="bg-primary-green text-white text-lg font-semibold rounded-md p-3 px-6 my-3"
-                >Learn More</button
+              >
+                <a href="/#about-us">Learn More</a></button
               >
             </div>
           </div>
@@ -38,24 +39,20 @@ import WorkshopsImageCarousel from "../components/WorkshopsImageCarousel.svelte"
         </div>
       </div>
     </section>
-    <section id="about-us" class="space-y-5 px-4 md:px-20 md:py-0">
+    <section id="about-us" class="space-y-10 px-4 md:px-20 md:py-0">
       <div class="text-center">
         <span class="text-5xl md:text-6xl font-[700] text-[#333333]"
           >About <span class="text-primary-yellow">Us</span></span
         >
       </div>
-      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="flex flex-col lg:flex-row items-center justify-center gap-8">
         <div class="basis-full md:basis-1/2">
           <div class="md:px-8">
-            <Image
-              src={AboutUsImage}
-              alt={"standing boy"}
-              class="max-w-full h-auto"
-            />
+            <Image src={AboutUsImage} alt={"standing boy"} class="" />
           </div>
         </div>
         <div
-          class="basis-full md:basis-1/2 text-base md:text-lg lg:text-2xl leading-9 md:p-8"
+          class="basis-full md:basis-1/2 text-base sm:text-sm md:text-md md:text-xl md:p-8"
         >
           Bal Uday is a non-profit trust dedicated to spreading awareness about
           child rights among children, parents, teachers, and nodal officers.
@@ -69,7 +66,7 @@ import WorkshopsImageCarousel from "../components/WorkshopsImageCarousel.svelte"
           exploitation and provide avenues for redressal through proper legal channels.
           <br />
           <button
-            class="bg-primary-yellow text-white text-lg font-semibold rounded-md p-3 px-6 my-5"
+            class="bg-primary-yellow text-white text-sm md:text-lg font-semibold rounded-md p-2 lg:p-3 px-4 lg:px-6 my-2 lg:my-5"
           >
             <a href="/about">Know More</a>
           </button>
@@ -109,10 +106,11 @@ import WorkshopsImageCarousel from "../components/WorkshopsImageCarousel.svelte"
             <form
               class="flex flex-col gap-4 w-full max-w-md"
               action="/api/sendEmail"
+              method="post"
             >
               <input
                 type="text"
-                name="firstName"
+                name="name"
                 placeholder="Full Name*"
                 class="form-input"
                 required

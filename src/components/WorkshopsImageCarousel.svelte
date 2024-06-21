@@ -60,5 +60,10 @@
     border-radius: 50%;
     padding: 1.5rem;
     margin: 1rem;
+    opacity: 1;
+  }
+
+  .splide__arrow--prev:hover,.splide__arrow--next:hover{
+    opacity: 1;
   }
 </style>

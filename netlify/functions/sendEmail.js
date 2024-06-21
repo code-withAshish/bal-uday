@@ -1,52 +1,61 @@
-import * as Busboy from "busboy"
+async function sendEmail(name, email, phone, message) {
+  const url = new URL("https://control.msg91.com/api/v5/email/send");
 
-function parseMultipartForm(event) {
-  return new Promise((resolve) => {
-    // we'll store all form fields inside of this
-    const fields = {};
+  let headers = {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+    authkey: process.env.MSG91_API_KEY,
+  };
 
-    // let's instantiate our busboy instance!
-    const busboy = new Busboy({
-      // it uses request headers
-      // to extract the form boundary value (the ----WebKitFormBoundary thing)
-      headers: event.headers
-    });
+  let body = {
+    recipients: [
+      {
+        to: [
+          {
+            email: "prakratiaryaoffice@gmail.com",
+            name: "Prakriti",
+          },
+        ],
+        variables: {
+          name,
+          email,
+          phone,
+          message,
+        },
+      },
+    ],
+    from: {
+      email: "contact@baluday.org",
+    },
+    domain: "baluday.org",
+    template_id: "contact_us_response",
+  };
 
-    // before parsing anything, we need to set up some handlers.
-    // whenever busboy comes across a file ...
-    busboy.on(
-      "file",
-      (fieldname, filestream, filename, transferEncoding, mimeType) => {
-        // ... we take a look at the file's data ...
-        filestream.on("data", (data) => {
-          // ... and write the file's name, type and content into `fields`.
-          fields[fieldname] = {
-            filename,
-            type: mimeType,
-            content: data,
-          };
-        });
-      }
-    );
-     // whenever busboy comes across a normal field ...
-    busboy.on("field", (fieldName, value) => {
-      // ... we write its value into `fields`.
-      fields[fieldName] = value;
-    });
-
-    // once busboy is finished, we resolve the promise with the resulted fields.
-    busboy.on("finish", () => {
-      resolve(fields)
-    });
-
-    // now that all handlers are set up, we can finally start processing our request!
-    busboy.write(event.body);
+  const res = await fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(body),
   });
+  console.log(res.statusText,await res.json());
 }
 
-module.exports.handler = async (event) => {
+/**
+ *
+ * @param {Request} req
+ * @returns {Response}
+ */
+export default async (req) => {
+  const fd = await req.formData();
 
-    const fields = await parseMultipartForm(event);
+  // get all the values from the form
+  const data = {
+    name: fd.get("name"),
+    email: fd.get("email"),
+    tele: fd.get("tele"),
+    message: fd.get("message"),
+  };
 
-    console.log(fields);
-}
+  await sendEmail(data.name, data.email, data.tele, data.message);
+
+  return Response.redirect(new URL("/", new URL(req.url).origin));
+};

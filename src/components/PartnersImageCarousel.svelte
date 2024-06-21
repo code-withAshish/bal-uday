@@ -106,5 +106,10 @@
     border-radius: 50%;
     padding: 1.5rem;
     margin: 1rem;
+    opacity: 1;
+  }
+  .splide__arrow--next:hover,
+  .splide__arrow--prev:hover {
+    opacity: 1;
   }
 </style>
