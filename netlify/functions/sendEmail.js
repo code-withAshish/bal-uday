@@ -12,8 +12,8 @@ async function sendEmail(name, email, phone, message) {
       {
         to: [
           {
-            email: "prakratiaryaoffice@gmail.com",
-            name: "Prakriti",
+            email: "abhushan064@gmail.com",
+            name: "Bal Uday Team",
           },
         ],
         variables: {

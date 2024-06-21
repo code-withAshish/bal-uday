@@ -1,6 +1,11 @@
 <script>
   import { Splide, SplideSlide, SplideTrack } from "@splidejs/svelte-splide";
   import "@splidejs/splide/dist/css/themes/splide-default.min.css";
+
+  import Carousel1 from "../assets/Carousel1.png";
+  import Carousel2 from "../assets/Carousel2.png";
+  import Carousel3 from "../assets/Carousel3.png";
+
 </script>
 
 <Splide
@@ -32,18 +37,18 @@
   <SplideTrack>
     <SplideSlide>
       <div class="flex items-center justify-center flex-col">
-        <img src={"/Carousel1.png"} alt="an hero" />
+        <img src={Carousel1.src} alt="an hero" />
       </div>
     </SplideSlide>
     <SplideSlide>
       <div class="flex items-center justify-center flex-col">
-        <img src={"/Carousel2.png"} alt="an hero" />
+        <img src={Carousel2.src} alt="an hero" />
       </div>
     </SplideSlide>
 
     <SplideSlide>
       <div class="flex items-center justify-center flex-col">
-        <img src={"/Carousel3.png"} alt="an hero" />
+        <img src={Carousel3.src} alt="an hero" />
       </div>
     </SplideSlide>
   </SplideTrack>
