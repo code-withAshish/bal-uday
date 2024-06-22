@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import HeroImage from "../../assets/HeroImage.png";
 import AboutUsImage from "../../assets/AboutUs.png";
-import WorkshopsImageCarousel from "../../assets/WorkshopsImageCarousel.svelte";
+import WorkshopsImageCarousel from "../../components/WorkshopsImageCarousel.svelte";
 import HindiLayout from "../../layouts/HindiLayout.astro";
 ---
 
@@ -26,15 +26,13 @@ import HindiLayout from "../../layouts/HindiLayout.astro";
               >शिक्षा और समर्थन के माध्यम से बच्चों और समुदायों का पोषण।</span
             >
             <div>
-              <!-- <button
-                class="bg-primary-green text-white text-lg font-semibold rounded-md p-3 px-6 my-3"
-              > -->
+            
               <a
                 href="/hi/#about-us"
                 class="bg-primary-green text-white text-lg font-semibold rounded-md p-4 px-6 my-3"
                 >अधिक जानकारी</a
               >
-              <!-- </button> -->
+              
             </div>
           </div>
         </div>
@@ -62,6 +60,8 @@ import HindiLayout from "../../layouts/HindiLayout.astro";
         <div
           class="basis-full md:basis-1/2 text-base sm:text-sm md:text-md md:text-xl md:p-8"
         >
+        <div class="flex flex-col gap-4 md:p-8">
+        <div>
           बाल उदय एक गैर-लाभकारी ट्रस्ट है जो बच्चों, माता-पिता, शिक्षकों और
           नोडल अधिकारियों के बीच बाल अधिकारों के बारे में जागरूकता फैलाने के लिए
           समर्पित है। हमारा मिशन समुदायों को शिक्षित और सशक्त बनाना है ताकि हर
@@ -74,13 +74,13 @@ import HindiLayout from "../../layouts/HindiLayout.astro";
           की जाती है। हमारा उद्देश्य शोषण को रोकना और उचित कानूनी चैनलों के माध्यम
           से निवारण के रास्ते प्रदान करना है।
           <br />
-
+        </div>
           <a href="/hi/about">
             <button
-              class="bg-primary-yellow text-white text-sm md:text-lg font-semibold rounded-md p-2 lg:p-3 px-4 lg:px-6 my-2 lg:my-5"
+              class="bg-primary-yellow text-white text-sm md:text-lg font-semibold rounded-md p-2 lg:p-3 px-4 lg:px-6 w-fit"
               >अधिक जानकारी</button
-            ></a
-          >
+            ></a>
+          </div>
         </div>
       </div>
     </section>
