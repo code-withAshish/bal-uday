@@ -26,11 +26,12 @@ import WorkshopsImageCarousel from "../assets/WorkshopsImageCarousel.svelte";
               >Nurturing children and communities through education and support.</span
             >
             <div>
-              <button
-                class="bg-primary-green text-white text-lg font-semibold rounded-md p-3 px-6 my-3"
+              <a
+                href="/#about-us"
+                class="bg-primary-green text-white text-lg font-semibold rounded-md p-4 px-6 my-3"
               >
-                <a href="/#about-us">Learn More</a></button
-              >
+                Learn More
+              </a>
             </div>
           </div>
         </div>
@@ -54,103 +55,106 @@ import WorkshopsImageCarousel from "../assets/WorkshopsImageCarousel.svelte";
         <div
           class="basis-full md:basis-1/2 text-base sm:text-sm md:text-md md:text-xl md:p-8"
         >
-          Bal Uday is a non-profit trust dedicated to spreading awareness about
-          child rights among children, parents, teachers, and nodal officers.
-          Our mission is to educate and empower communities to ensure the safety
-          and well-being of every child.
-          <br />
-          <br />
-          Our two-tier program targets both adults (teachers, parents, and nodal
-          officers) and children, providing education about legal rights and protections
-          under acts like the POSCO Act and the Juvenile Justice Act. We aim to prevent
-          exploitation and provide avenues for redressal through proper legal channels.
-          <br />
-          <button
-            class="bg-primary-yellow text-white text-sm md:text-lg font-semibold rounded-md p-2 lg:p-3 px-4 lg:px-6 my-2 lg:my-5"
-          >
-            <a href="/about">Know More</a>
-          </button>
-        </div>
-      </div>
-    </section>
-    <section id="workshops" class="py-10 space-y-5 px-4 md:px-20">
-      <div class="text-center">
-        <span class="text-5xl md:text-6xl font-[700] text-[#333333]"
-          ><span class="text-[#C69C6D]">Work</span>shops</span
-        >
-      </div>
-      <div class="p-4 md:px-20">
-        <div class="mx-auto">
-          <WorkshopsImageCarousel client:load />
-        </div>
-      </div>
-    </section>
-    <section id="contact-us" class="px-4 md:px-20 pb-10">
-      <div
-        class="container mx-auto flex flex-col md:flex-row justify-between items-start gap-10"
-      >
-        <div
-          class="w-full md:w-1/2 space-y-4 p-4 md:p-10 text-center md:text-left"
-        >
-          <span class="text-5xl md:text-6xl font-[700] text-[#333333]"
-            >Contact Us <span class="text-primary-green text-8xl">.</span>
-          </span>
-          <div class="max-w-lg mx-auto md:mx-0">
-            Please feel free to reach out to us in case you have any queries or
-            complaints. Once we have received any complaints or queries, we will
-            reach out to you.
-          </div>
-        </div>
-        <div class="w-full md:w-1/2">
-          <div class="flex items-center justify-center">
-            <form
-              class="flex flex-col gap-4 w-full max-w-md"
-              action="/api/sendEmail"
-              method="post"
+          <div class="md:p-8">
+            Bal Uday is a non-profit trust dedicated to spreading awareness
+            about child rights among children, parents, teachers, and nodal
+            officers. Our mission is to educate and empower communities to
+            ensure the safety and well-being of every child.
+            <br />
+            <br />
+            Our two-tier program targets both adults (teachers, parents, and nodal
+            officers) and children, providing education about legal rights and protections
+            under acts like the POSCO Act and the Juvenile Justice Act. We aim to
+            prevent exploitation and provide avenues for redressal through proper
+            legal channels.
+            <br />
+            <button
+              class="bg-primary-yellow text-white text-sm md:text-lg font-semibold rounded-md p-2 lg:p-3 px-4 lg:px-6 my-2 lg:my-5"
             >
-              <input
-                type="text"
-                name="name"
-                placeholder="Full Name*"
-                class="form-input"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email*"
-                class="form-input"
-                required
-              />
-              <input
-                type="tel"
-                name="tele"
-                placeholder="Phone Number*"
-                class="form-input"
-                required
-              />
-              <textarea
-                name="message"
-                rows="4"
-                placeholder="Message/Complaint*"
-                required
-                class="form-input"></textarea>
-              <button
-                type="submit"
-                class="rounded-lg text-white bg-primary-green px-6 py-3 text-sm font-semibold"
-              >
-                Submit
-              </button>
-            </form>
+              <a href="/about">Know More </a>
+            </button>
           </div>
         </div>
       </div>
+      <section id="workshops" class="py-10 space-y-5 px-4 md:px-20">
+        <div class="text-center">
+          <span class="text-5xl md:text-6xl font-[700] text-[#333333]"
+            ><span class="text-[#C69C6D]">Work</span>shops</span
+          >
+        </div>
+        <div class="p-4 md:px-20">
+          <div class="mx-auto">
+            <WorkshopsImageCarousel client:load />
+          </div>
+        </div>
+      </section>
+      <section id="contact-us" class="px-4 md:px-20 pb-10">
+        <div
+          class="container mx-auto flex flex-col md:flex-row justify-between items-start gap-10"
+        >
+          <div
+            class="w-full md:w-1/2 space-y-4 p-4 md:p-10 text-center md:text-left"
+          >
+            <span class="text-5xl md:text-6xl font-[700] text-[#333333]"
+              >Contact Us <span class="text-primary-green text-8xl">.</span>
+            </span>
+            <div class="max-w-lg mx-auto md:mx-0">
+              Please feel free to reach out to us in case you have any queries
+              or complaints. Once we have received any complaints or queries, we
+              will reach out to you.
+            </div>
+          </div>
+          <div class="w-full md:w-1/2">
+            <div class="flex items-center justify-center">
+              <form
+                class="flex flex-col gap-4 w-full max-w-md"
+                action="/api/sendEmail"
+                method="post"
+              >
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Full Name*"
+                  class="form-input"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email*"
+                  class="form-input"
+                  required
+                />
+                <input
+                  type="tel"
+                  name="tele"
+                  placeholder="Phone Number*"
+                  class="form-input"
+                  required
+                />
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="Message/Complaint*"
+                  required
+                  class="form-input"></textarea>
+                <button
+                  type="submit"
+                  class="rounded-lg text-white bg-primary-green px-6 py-3 text-sm font-semibold"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
   </main>
-</Layout>
 
-<style>
-  .form-input {
-    @apply bg-[#EEF9EF] p-3 rounded-lg text-xs;
-  }
-</style>
+  <style>
+    .form-input {
+      @apply bg-[#EEF9EF] p-3 rounded-lg text-xs;
+    }
+  </style>
+</Layout>
