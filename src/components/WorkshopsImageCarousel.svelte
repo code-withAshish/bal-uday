@@ -2,15 +2,26 @@
   import { Splide, SplideSlide, SplideTrack } from "@splidejs/svelte-splide";
   import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 
-  import Carousel1 from "../assets/Carousel1.png";
-  import Carousel2 from "../assets/Carousel2.png";
-  import Carousel3 from "../assets/Carousel3.png";
+  import Workshop1 from "../assets/Workshop1.jpg";
+  import Workshop2 from "../assets/Workshop2.jpg";
+  import Workshop3 from "../assets/Workshop3.jpg";
+  import Workshop4 from "../assets/Workshop4.jpg";
+  import Workshop5 from "../assets/Workshop5.jpg";
+  import Workshop6 from "../assets/Workshop6.jpg";
 
+  const images = [
+    Workshop1,
+    Workshop2,
+    Workshop3,
+    Workshop4,
+    Workshop5,
+    Workshop6,
+  ];
 </script>
 
 <Splide
   hasTrack={false}
-  aria-label="My Favorite Images"
+  aria-label="Workshop Images"
   options={{
     autoplay: true,
     interval: 2000,
@@ -35,22 +46,14 @@
     <button class="splide__arrow splide__arrow--next">{">"}</button>
   </div>
   <SplideTrack>
-    <SplideSlide>
-      <div class="flex items-center justify-center flex-col">
-        <img src={Carousel1.src} alt="an hero" />
-      </div>
-    </SplideSlide>
-    <SplideSlide>
-      <div class="flex items-center justify-center flex-col">
-        <img src={Carousel2.src} alt="an hero" />
-      </div>
-    </SplideSlide>
-
-    <SplideSlide>
-      <div class="flex items-center justify-center flex-col">
-        <img src={Carousel3.src} alt="an hero" />
-      </div>
-    </SplideSlide>
+    <slot name="image"/>
+    {#each images as image}
+      <SplideSlide>
+        <div class="flex items-center justify-center flex-col p-4">
+          <img src={image.src} alt={"Workshop"} />
+        </div>
+      </SplideSlide>
+    {/each}
   </SplideTrack>
 </Splide>
 
@@ -68,7 +71,8 @@
     opacity: 1;
   }
 
-  .splide__arrow--prev:hover,.splide__arrow--next:hover{
+  .splide__arrow--prev:hover,
+  .splide__arrow--next:hover {
     opacity: 1;
   }
 </style>

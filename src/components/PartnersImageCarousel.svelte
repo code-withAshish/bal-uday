@@ -4,7 +4,8 @@
   import GayatriImage from "../assets/Gayatri.png";
   import KunalImage from "../assets/Kunal.jpg";
   import ShubhiImage from "../assets/Shubhi.jpg";
-  import NoImage from "../assets/NoImage.webp";
+  import AdvityaImage from "../assets/Advitya.jpg";
+
   export let language = "en";
 </script>
 
@@ -187,7 +188,7 @@
           class="flex items-center justify-center flex-col md:flex-row gap-10 p-4"
         >
           <div>
-            <img src={NoImage.src} alt="an hero" height="300" width="300" />
+            <img src={AdvityaImage.src} alt="Advitya Awasthi" height="200" width="200" />
             <p class="text-center text-[#C69C6D] font-[700] pt-2">
               {#if language === "en"}
                 Advitya Awasthi
