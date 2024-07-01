@@ -2,12 +2,19 @@
   import { Splide, SplideSlide, SplideTrack } from "@splidejs/svelte-splide";
   import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 
-  import Workshop1 from "../assets/Workshop1.jpg";
-  import Workshop2 from "../assets/Workshop2.jpg";
-  import Workshop3 from "../assets/Workshop3.jpg";
-  import Workshop4 from "../assets/Workshop4.jpg";
-  import Workshop5 from "../assets/Workshop5.jpg";
-  import Workshop6 from "../assets/Workshop6.jpg";
+  import Workshop1 from "../assets/workshop/Workshop1.jpg";
+  import Workshop2 from "../assets/workshop/Workshop2.jpg";
+  import Workshop3 from "../assets/workshop/Workshop3.jpg";
+  import Workshop4 from "../assets/workshop/Workshop4.jpg";
+  import Workshop5 from "../assets/workshop/Workshop5.jpg";
+  import Workshop6 from "../assets/workshop/Workshop6.jpg";
+import Workshop7 from "../assets/workshop/Workshop7.jpg";
+import Workshop8 from "../assets/workshop/Workshop8.jpg";
+import Workshop9 from "../assets/workshop/Workshop9.jpg";
+import Workshop10 from "../assets/workshop/Workshop10.jpg";
+import Workshop11 from "../assets/workshop/Workshop11.jpg";
+import Workshop12 from "../assets/workshop/Workshop12.jpg";
+import Workshop13 from "../assets/workshop/Workshop13.jpg";
 
   const images = [
     Workshop1,
@@ -16,7 +23,14 @@
     Workshop4,
     Workshop5,
     Workshop6,
-  ];
+    Workshop7,
+    Workshop8,
+    Workshop9,
+    Workshop10,
+    Workshop11,
+    Workshop12,
+    Workshop13,
+  ].sort(() => Math.random() - 0.5);
 </script>
 
 <Splide
@@ -24,7 +38,7 @@
   aria-label="Workshop Images"
   options={{
     autoplay: true,
-    interval: 2000,
+    interval: 1200,
     type: "loop",
     perPage: 3,
     focus: "center",
@@ -46,7 +60,6 @@
     <button class="splide__arrow splide__arrow--next">{">"}</button>
   </div>
   <SplideTrack>
-    <slot name="image"/>
     {#each images as image}
       <SplideSlide>
         <div class="flex items-center justify-center flex-col p-4">
