@@ -196,7 +196,7 @@
                 अद्वितीय अवस्थी
               {/if}
             </p>
-            <p class="text-center text-xs">LLM</p>
+            <p class="text-center text-xs">LLB</p>
           </div>
           <p class="basis-1/3 text-xs md:text-sm">
             {#if language === "en"}
