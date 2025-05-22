@@ -106,7 +106,49 @@ import HindiLayout from "../../layouts/HindiLayout.astro";
       </div>
     </div>
   </section>
-  <section id="contact-us" class="px-4 md:px-20 pb-10">
+
+  <section class="px-4 md:px-20 py-16 bg-[#FFF9F0] rounded-lg">
+    <div class="text-center pb-12">
+      <span class="text-4xl md:text-5xl font-bold text-[#333333]">
+        बदलाव का हिस्सा बनें
+      </span>
+    </div>
+    <div class="flex flex-col md:flex-row gap-8">
+      <!-- Donate Section -->
+      <div
+        class="flex-1 bg-white p-6 rounded-2xl shadow-md text-center space-y-4"
+      >
+        <h3 class="text-2xl font-bold text-primary-green">दान करें</h3>
+        <p class="italic text-gray-700">
+          "सबसे छोटा दयालु कार्य, सबसे महान इरादे से अधिक मूल्यवान है।"
+        </p>
+        <form>
+          <script
+            src="https://checkout.razorpay.com/v1/payment-button.js"
+            data-payment_button_id="pl_QSJtYDEEkROo1i"
+            async></script>
+        </form>
+      </div>
+
+      <!-- Volunteer Section -->
+      <div
+        class="flex-1 bg-white p-6 rounded-2xl shadow-md text-center space-y-4"
+      >
+        <h3 class="text-2xl font-bold text-primary-yellow">हमसे जुड़ें</h3>
+        <p class="italic text-gray-700">
+          "अपना समय देना एक उपहार है, जो जीवन को बदलता है — आपका भी।"
+        </p>
+        <a
+          href="/hi/volunteer"
+          class="inline-block bg-primary-yellow text-white px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition"
+        >
+          स्वयंसेवक बनें
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-us" class="px-4 md:px-20 p-10">
     <div
       class="container mx-auto flex flex-col md:flex-row justify-between items-start gap-10"
     >

@@ -1,0 +1,119 @@
+---
+import HindiLayout from "../../layouts/HindiLayout.astro";
+---
+
+<HindiLayout title="बाल उदय">
+  <section id="volunteer-form" class="container mx-auto py-16 px-4">
+    <div class="text-center pb-10">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800">
+        स्वयंसेवक फॉर्म
+      </h2>
+      <p class="text-gray-500 mt-2 text-base">
+        हमारे साथ जुड़ें और बदलाव लाने में मदद करें।
+      </p>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-stretch justify-center gap-8">
+      <!-- Form -->
+      <form
+        class="flex flex-col gap-4 w-full md:w-1/2 bg-white p-8 rounded-2xl shadow-lg border border-gray-200"
+        action="/api/volunteer"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input
+          type="text"
+          name="name"
+          placeholder="पूरा नाम*"
+          class="form-input"
+          required
+        />
+        <input
+          type="text"
+          name="contact"
+          placeholder="संपर्क विवरण (फोन/ईमेल)*"
+          class="form-input"
+          required
+        />
+        <input
+          type="text"
+          name="address"
+          placeholder="वर्तमान पता*"
+          class="form-input"
+          required
+        />
+        <input
+          type="text"
+          name="qualification"
+          placeholder="शैक्षणिक योग्यता*"
+          class="form-input"
+          required
+        />
+
+        <textarea
+          name="experience"
+          rows="3"
+          placeholder="पूर्व अनुभव*"
+          class="form-input"
+          required></textarea>
+        <textarea
+          name="whyVolunteer"
+          rows="3"
+          placeholder="आप टीम बाल उदय में स्वयंसेवक क्यों बनना चाहते हैं?*"
+          class="form-input"
+          required></textarea>
+        <textarea
+          name="awarenessExperience"
+          rows="3"
+          placeholder="क्या आपके पास जागरूकता कार्यक्रमों या शिक्षण का अनुभव है?*"
+          class="form-input"
+          required></textarea>
+
+        <div>
+          <label class="text-sm font-medium text-gray-700 block mb-1"
+            >अपना सीवी अपलोड करें*</label
+          >
+          <input
+            type="file"
+            name="cv"
+            accept=".pdf,.doc,.docx"
+            class="form-input bg-white border border-gray-300"
+            required
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="rounded-lg text-white bg-green-600 hover:bg-green-700 px-6 py-3 text-base font-semibold transition-all duration-200"
+        >
+          सबमिट करें
+        </button>
+      </form>
+
+      <!-- Image + Quote -->
+      <div
+        class="hidden md:flex w-full md:w-1/2 flex-col items-center justify-center text-center gap-6"
+      >
+        <img
+          src="/volunteer.jpg"
+          alt="स्वयंसेवक टीम फोटो"
+          class="rounded-2xl object-cover w-full max-h-[800px] shadow-md"
+        />
+        <blockquote class="text-lg italic text-gray-600 max-w-md">
+          “अपने आप को खोजने का सबसे अच्छा तरीका है, खुद को दूसरों की सेवा में खो
+          देना।”
+          <br />
+          <span class="block mt-2 text-sm font-medium text-gray-500"
+            >– महात्मा गांधी</span
+          >
+        </blockquote>
+      </div>
+    </div>
+  </section>
+</HindiLayout>
+
+<style>
+  .form-input {
+    @apply bg-[#EEF9EF] p-3 rounded-lg text-sm text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200;
+  }
+</style>
