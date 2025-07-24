@@ -4,27 +4,27 @@ import { Readable } from "stream";
 
 const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
 const DRIVE_FOLDER_ID = process.env.DRIVE_FOLDER_ID;
-if (!SPREADSHEET_ID || !DRIVE_FOLDER_ID) {
-  throw new Error("SPREADSHEET_ID and DRIVE_FOLDER_ID must be set");
+const GOOGLE_SERVICE_ACCOUNT_JSON = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
+
+if (!SPREADSHEET_ID || !DRIVE_FOLDER_ID || !GOOGLE_SERVICE_ACCOUNT_JSON) {
+  throw new Error(
+    "SPREADSHEET_ID, DRIVE_FOLDER_ID, and GOOGLE_SERVICE_ACCOUNT_JSON must be set"
+  );
 }
 
-const auth = new google.auth.JWT(
-  process.env.GOOGLE_SERVICE_ACCOUNT_MAIL,
-  null,
-  process.env.GOOGLE_SERVICE_ACCOUNT_KEY,
-  [
+// Parse JSON key from env
+const credentials = JSON.parse(GOOGLE_SERVICE_ACCOUNT_JSON);
+
+const googleAuth = new google.auth.GoogleAuth({
+  credentials,
+  scopes: [
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/spreadsheets",
-  ]
-);
+  ],
+});
 
-let authReady = false;
 async function getAuth() {
-  if (!authReady) {
-    await auth.authorize();
-    authReady = true;
-  }
-  return auth;
+  return await googleAuth.getClient();
 }
 
 function parseMultipartForm(event) {
