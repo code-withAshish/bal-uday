@@ -13,7 +13,9 @@ if (!SPREADSHEET_ID || !DRIVE_FOLDER_ID || !GOOGLE_SERVICE_ACCOUNT_JSON) {
 }
 
 // Parse JSON key from env
-const credentials = JSON.parse(GOOGLE_SERVICE_ACCOUNT_JSON);
+const credentials = JSON.parse(
+  Buffer.from(GOOGLE_SERVICE_ACCOUNT_JSON, "base64").toString("utf8")
+);
 
 const googleAuth = new google.auth.GoogleAuth({
   credentials,
